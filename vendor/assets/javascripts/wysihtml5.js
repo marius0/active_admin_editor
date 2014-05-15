@@ -3436,11 +3436,12 @@ wysihtml5.browser = (function() {
     
     isIos: function() {
       var userAgent = this.USER_AGENT.toLowerCase();
-      return userAgent.indexOf("webkit") !== -1 && userAgent.indexOf("mobile") !== -1;
+      return userAgent.indexOf("webkit") !== -1 && userAgent.indexOf("mobile") !== -1 && !this.isAndroid();
     },
 
     isAndroid: function() {
-      return this.USER_AGENT.indexOf("Android") !== -1;
+      var userAgent = this.USER_AGENT.toLowerCase();
+      return userAgent.indexOf("android") !== -1;
     },
  
     /**

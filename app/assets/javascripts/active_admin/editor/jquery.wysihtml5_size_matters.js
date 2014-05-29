@@ -10,6 +10,10 @@
         this.addBodyStyles();
         this.setupEvents();
         this.adjustHeight();
+        var _this = this;
+        setTimeout(function() {
+          _this.adjustHeight();
+        }, 100);
       }
 
       Wysihtml5SizeMatters.prototype.addBodyStyles = function() {

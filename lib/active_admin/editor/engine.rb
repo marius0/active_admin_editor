@@ -13,14 +13,18 @@ module ActiveAdmin
           'active_admin/editor.css'
         ] + ActiveAdmin::Editor.configuration.stylesheets
 
-        ActiveAdmin.application.tap do |config|
-          config.register_javascript 'active_admin/editor.js'
-          config.register_stylesheet 'active_admin/editor.css'
+        # removed due to:
+        # DEPRECATION WARNING: Active Admin: The `register_stylesheet` config is deprecated and will be removed
+        # in v2. Import your "active_admin/editor.css" stylesheet in the active_admin.scss.
 
-          ActiveAdmin::Editor.configuration.stylesheets.each do |stylesheet|
-            config.register_stylesheet stylesheet
-          end
-        end
+        # ActiveAdmin.application.tap do |config|
+        #   config.register_javascript 'active_admin/editor.js'
+        #   config.register_stylesheet 'active_admin/editor.css'
+
+        #   ActiveAdmin::Editor.configuration.stylesheets.each do |stylesheet|
+        #     config.register_stylesheet stylesheet
+        #   end
+        # end
       end
     end
   end

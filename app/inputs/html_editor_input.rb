@@ -1,4 +1,4 @@
-class HtmlEditorInput < Formtastic::Inputs::TextInput
+class HTMLEditorInput < Formtastic::Inputs::TextInput
   def upload_enabled?
     ActiveAdmin::Editor.configuration.s3_configured?
   end
